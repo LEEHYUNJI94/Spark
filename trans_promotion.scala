@@ -3,7 +3,7 @@ val transactionFile = sc.textfile("../transactiondata.txt")
 val transactionData = transactionFile.map(._split(",")) //데이터파싱
 val transactionCustId = transactionData.map(trans => (._2,toInt,trans) //PairRDD 생성 (tuple)
 
-//구매횟수 많은 고객 선정 후 사은품 증정로직 추가 (compTrnasaction)
+//구매횟수 많은 고객 선정 후 사은품 증정로직 추가 (compTransaction )
 val (custId, purch ) = transactionCustId.countByKey().toSeq.sortBy(_._2).last
 var compTransaction = Array(Array("2018-10-25","11:50 PM","53","4","1","0.00"))
 transactionCustId.lookup(53).foreach(tran => println(tran.mkString(","))) //ID 53번 고객의 구매기록
