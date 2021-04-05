@@ -3,4 +3,5 @@
 
 
 1. SpendAmtbyKeyUser : DataFrame ETL  
-2. trans_promotion : Pair RDD (promotion data with transaction data ) 
+2. trans_promotion : Pair RDD (promotion data with transaction data )  
+-schema : date,time,custid,itemid,quan,amt
